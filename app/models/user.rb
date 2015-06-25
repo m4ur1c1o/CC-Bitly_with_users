@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # ej. User.authenticate('fernando@codea.mx', 'qwerty')
-
+  has_many :urls
   def self.authenticate(email, password)
 		return nil unless user = User.find_by(email: email)
 
@@ -16,6 +16,4 @@ class User < ActiveRecord::Base
 		# 	nil
 		end
   # end
-
-  
 end
